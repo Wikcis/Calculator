@@ -13,8 +13,11 @@
         android:theme="@style/Theme.Calculator"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
+            android:name=".AdvancedCalcScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SimpleCalcScreen"
+            android:exported="false" />
         <activity
             android:name=".HomeScreen"
             android:exported="true">

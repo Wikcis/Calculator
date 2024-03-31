@@ -2,7 +2,6 @@ package com.example.calculator
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,7 +23,11 @@ class HomeScreen : AppCompatActivity() {
         }
 
         binding.simpleCalcButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SimpleCalcScreen::class.java)
+            startActivity(intent)
+        }
+        binding.advancedCalcButton.setOnClickListener {
+            val intent = Intent(this, AdvancedCalcScreen::class.java)
             startActivity(intent)
         }
     }
