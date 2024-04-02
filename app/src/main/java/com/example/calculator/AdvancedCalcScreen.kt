@@ -20,6 +20,8 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
     private var operation = false
 
+    private var advancedOperation = false
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,6 +136,111 @@ class AdvancedCalcScreen : AppCompatActivity() {
                 binding.expressionTextView.append(".")
             }
         }
+
+        binding.logButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "log10(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+
+        binding.lnButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "log(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.sinButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+
+            val exp = "sin(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.cosButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "cos(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.tanButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "tan(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.sqrtButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "sqrt(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.squareButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val tmp = binding.expressionTextView.text.toString().toFloat()
+
+            binding.expressionTextView.text = (tmp * tmp).toString()
+        }
+        binding.powerButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val exp = "tan(" + binding.expressionTextView.text + ")"
+            binding.expressionTextView.text = exp
+        }
+        binding.percentButton.setOnClickListener {
+            checkIfLastCharIsDigit()
+            if (!operation) {
+                evaluateExpression()
+                binding.resultView.text = binding.expressionTextView.text
+            }
+            operation = true
+            advancedOperation = true
+            val tmp = binding.expressionTextView.text.toString().toFloat()
+            binding.expressionTextView.text = (tmp/100).toString()
+        }
+
+
         binding.allClearButton.setOnClickListener {
             operation = false
             binding.resultView.text = "0"
@@ -141,6 +248,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.clearButton.setOnClickListener {
             operation = false
+            advancedOperation = false
             if (binding.resultView.text.isNotEmpty()) {
                 binding.resultView.text = binding.resultView.text.dropLast(1)
                 binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
@@ -171,7 +279,8 @@ class AdvancedCalcScreen : AppCompatActivity() {
                     binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
                     binding.resultView.text = binding.resultView.text.drop(1)
                 } else {
-                    binding.expressionTextView.text = "-$binding.expressionTextView.text"
+                    val tmp = binding.expressionTextView.text.toString().toFloat()
+                    binding.expressionTextView.text = (-tmp).toString()
                     binding.resultView.text = binding.expressionTextView.text
                 }
             }
@@ -179,13 +288,14 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
         binding.resultButton.setOnClickListener {
             operation = false
+            advancedOperation = true
             checkIfLastCharIsDigit()
             evaluateExpression()
         }
     }
 
     private fun checkIfLastCharIsDigit() {
-        if (!binding.expressionTextView.text.last().isDigit()) {
+        if (binding.expressionTextView.text.isNotEmpty() && !binding.expressionTextView.text.last().isDigit() && !advancedOperation) {
             binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
         }
     }

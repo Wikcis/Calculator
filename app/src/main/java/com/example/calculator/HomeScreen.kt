@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.calculator.databinding.ActivityHomeScreenBinding
+import kotlin.system.exitProcess
 
 class HomeScreen : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
@@ -29,6 +30,14 @@ class HomeScreen : AppCompatActivity() {
         binding.advancedCalcButton.setOnClickListener {
             val intent = Intent(this, AdvancedCalcScreen::class.java)
             startActivity(intent)
+        }
+        binding.aboutButton.setOnClickListener {
+            val intent = Intent(this, AboutScreen::class.java)
+            startActivity(intent)
+        }
+        binding.exitButton.setOnClickListener {
+            finish();
+            exitProcess(0);
         }
     }
 }
