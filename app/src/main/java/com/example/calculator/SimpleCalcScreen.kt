@@ -8,21 +8,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.calculator.databinding.ActivityMainBinding
+import com.example.calculator.databinding.ActivitySimpleCalcScreenBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class SimpleCalcScreen : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
-    private var expression = "0"
+    private lateinit var binding: ActivitySimpleCalcScreenBinding
 
     private var operation = false
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySimpleCalcScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -152,8 +150,6 @@ class SimpleCalcScreen : AppCompatActivity() {
 
         }
         binding.plusMinusButton.setOnClickListener {
-            Log.d("asdasd", binding.expressionTextView.text.toString())
-            Log.d("drugie", binding.resultView.text.toString())
             if(binding.resultView.text.toString().toFloat() > 0) {
                 var t = binding.resultView.text
                 t = "-$t"

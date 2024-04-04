@@ -12,6 +12,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#DF8B0E"
         android:padding="3dp"
@@ -21,16 +23,17 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="@+id/threeButton"
-        app:layout_constraintTop_toBottomOf="@+id/threeButton"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintStart_toEndOf="@+id/twoButton"
+        app:layout_constraintTop_toBottomOf="@+id/threeButton" />
 
     <Button
         android:id="@+id/multiplyButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#DF8B0E"
         android:padding="3dp"
@@ -38,17 +41,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/addButton"
+        app:layout_constraintBottom_toBottomOf="@+id/nineButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/nineButton"
-        app:layout_constraintTop_toBottomOf="@id/divisionButton" />
+        app:layout_constraintTop_toTopOf="@+id/nineButton" />
 
     <Button
         android:id="@+id/fiveButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -56,17 +60,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/twoButton"
+        app:layout_constraintBottom_toTopOf="@+id/twoButton"
         app:layout_constraintEnd_toStartOf="@+id/sixButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/fourButton"
-        app:layout_constraintTop_toBottomOf="@id/eightButton" />
+        app:layout_constraintTop_toBottomOf="@+id/eightButton" />
 
     <Button
         android:id="@+id/dotButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#3F51B5"
         android:padding="3dp"
@@ -76,15 +81,17 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/resultButton"
-        app:layout_constraintStart_toEndOf="@+id/zeroButton"
-        app:layout_constraintTop_toBottomOf="@+id/twoButton"
-        app:layout_constraintVertical_bias="0.504" />
+        app:layout_constraintStart_toEndOf="@id/zeroButton"
+        app:layout_constraintTop_toBottomOf="@+id/twoButton" />
 
     <Button
         android:id="@+id/divisionButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#DF8B0E"
         android:padding="3dp"
@@ -92,17 +99,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/multiplyButton"
+        app:layout_constraintBottom_toBottomOf="@+id/plusMinusButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/plusMinusButton"
-        app:layout_constraintTop_toBottomOf="@id/logButton" />
+        app:layout_constraintTop_toTopOf="@+id/plusMinusButton" />
 
     <Button
         android:id="@+id/plusMinusButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#8A8686"
         android:padding="3dp"
@@ -110,17 +118,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/nineButton"
+        app:layout_constraintBottom_toTopOf="@+id/nineButton"
         app:layout_constraintEnd_toStartOf="@+id/divisionButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/clearButton"
-        app:layout_constraintTop_toBottomOf="@id/lnButton" />
+        app:layout_constraintTop_toBottomOf="@+id/sqrtButton" />
 
     <Button
         android:id="@+id/clearButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#8A8686"
         android:padding="3dp"
@@ -128,17 +137,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/eightButton"
+        app:layout_constraintBottom_toTopOf="@+id/eightButton"
         app:layout_constraintEnd_toStartOf="@+id/plusMinusButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/allClearButton"
-        app:layout_constraintTop_toBottomOf="@id/percentButton" />
+        app:layout_constraintTop_toBottomOf="@+id/logButton" />
 
     <Button
         android:id="@+id/allClearButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#CA2C2C"
         android:padding="3dp"
@@ -148,15 +158,17 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/sevenButton"
         app:layout_constraintEnd_toStartOf="@+id/clearButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/powerButton"
-        app:layout_constraintTop_toBottomOf="@+id/sqrtButton" />
+        app:layout_constraintTop_toBottomOf="@+id/lnButton" />
 
     <Button
         android:id="@+id/addButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#DF8B0E"
         android:padding="3dp"
@@ -164,17 +176,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/subtractButton"
+        app:layout_constraintBottom_toBottomOf="@+id/sixButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sixButton"
-        app:layout_constraintTop_toBottomOf="@id/multiplyButton" />
+        app:layout_constraintTop_toTopOf="@+id/sixButton" />
 
     <Button
         android:id="@+id/sevenButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -184,7 +197,6 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/fourButton"
         app:layout_constraintEnd_toStartOf="@+id/eightButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/squareButton"
         app:layout_constraintTop_toBottomOf="@+id/allClearButton" />
 
@@ -193,6 +205,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -200,17 +214,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/fiveButton"
+        app:layout_constraintBottom_toTopOf="@+id/fiveButton"
         app:layout_constraintEnd_toStartOf="@+id/nineButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sevenButton"
-        app:layout_constraintTop_toBottomOf="@id/clearButton" />
+        app:layout_constraintTop_toBottomOf="@+id/clearButton" />
 
     <Button
         android:id="@+id/zeroButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -219,8 +234,8 @@
         android:textSize="34sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/dotButton"
-        app:layout_constraintStart_toEndOf="@+id/sinButton"
+        app:layout_constraintEnd_toStartOf="@id/dotButton"
+        app:layout_constraintStart_toEndOf="@id/sinButton"
         app:layout_constraintTop_toBottomOf="@+id/oneButton" />
 
     <Button
@@ -228,6 +243,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -235,17 +252,19 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/sixButton"
+        app:layout_constraintBottom_toTopOf="@+id/sixButton"
         app:layout_constraintEnd_toStartOf="@+id/multiplyButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/eightButton"
-        app:layout_constraintTop_toBottomOf="@id/plusMinusButton" />
+        app:layout_constraintTop_toBottomOf="@+id/plusMinusButton" />
 
     <Button
         android:id="@+id/subtractButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#DF8B0E"
         android:padding="3dp"
@@ -253,18 +272,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/resultButton"
+        app:layout_constraintBottom_toBottomOf="@+id/threeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/threeButton"
-        app:layout_constraintTop_toBottomOf="@+id/addButton"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintTop_toTopOf="@+id/threeButton" />
 
     <Button
         android:id="@+id/twoButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -274,10 +293,8 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/dotButton"
         app:layout_constraintEnd_toStartOf="@+id/threeButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/oneButton"
-        app:layout_constraintTop_toBottomOf="@+id/fiveButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/fiveButton" />
 
     <Button
         android:id="@+id/cosButton"
@@ -285,14 +302,14 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="cos"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/sinButton"
         app:layout_constraintEnd_toStartOf="@+id/oneButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tanButton" />
 
@@ -301,6 +318,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -308,18 +327,18 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/resultButton"
+        app:layout_constraintBottom_toTopOf="@+id/resultButton"
         app:layout_constraintEnd_toStartOf="@+id/subtractButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/twoButton"
-        app:layout_constraintTop_toBottomOf="@+id/sixButton"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintTop_toBottomOf="@+id/sixButton" />
 
     <Button
         android:id="@+id/oneButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -329,7 +348,6 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/zeroButton"
         app:layout_constraintEnd_toStartOf="@+id/twoButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cosButton"
         app:layout_constraintTop_toBottomOf="@+id/fourButton" />
 
@@ -338,6 +356,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -347,7 +367,6 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/oneButton"
         app:layout_constraintEnd_toStartOf="@+id/fiveButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tanButton"
         app:layout_constraintTop_toBottomOf="@+id/sevenButton" />
 
@@ -356,6 +375,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#293F49"
         android:padding="3dp"
@@ -363,11 +384,10 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/threeButton"
+        app:layout_constraintBottom_toTopOf="@+id/threeButton"
         app:layout_constraintEnd_toStartOf="@+id/addButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/fiveButton"
-        app:layout_constraintTop_toBottomOf="@id/nineButton" />
+        app:layout_constraintTop_toBottomOf="@+id/nineButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -390,10 +410,10 @@
         android:textAlignment="textEnd"
         android:textIsSelectable="false"
         android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/expressionTextView"
         app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expressionTextView"
         tools:ignore="RtlCompat,RtlHardcoded" />
 
     <TextView
@@ -411,10 +431,8 @@
         android:textColorHint="#877F7F"
         app:layout_constraintBottom_toTopOf="@id/resultView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="RtlCompat,RtlHardcoded" />
 
     <Button
@@ -422,14 +440,17 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="3dp"
+        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="sin"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/zeroButton"
+        app:layout_constraintEnd_toStartOf="@id/zeroButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cosButton" />
 
@@ -439,14 +460,14 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="x²"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/tanButton"
         app:layout_constraintEnd_toStartOf="@+id/sevenButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/powerButton" />
 
@@ -456,15 +477,16 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="√"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/powerButton"
-        app:layout_constraintEnd_toEndOf="@+id/allClearButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+        app:layout_constraintBottom_toTopOf="@+id/plusMinusButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/clearButton"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
 
     <Button
         android:id="@+id/powerButton"
@@ -472,8 +494,9 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="xʸ"
         app:cornerRadius="30dp"
@@ -481,7 +504,7 @@
         app:layout_constraintEnd_toStartOf="@+id/allClearButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sqrtButton" />
+        app:layout_constraintTop_toBottomOf="@+id/percentButton" />
 
     <Button
         android:id="@+id/tanButton"
@@ -489,14 +512,14 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="tan"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/cosButton"
         app:layout_constraintEnd_toStartOf="@+id/fourButton"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/squareButton" />
 
@@ -506,15 +529,16 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="%"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/clearButton"
+        app:layout_constraintBottom_toTopOf="@+id/powerButton"
         app:layout_constraintEnd_toStartOf="@+id/lnButton"
-        app:layout_constraintStart_toEndOf="@+id/sqrtButton"
-        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
 
     <Button
         android:id="@+id/logButton"
@@ -522,16 +546,16 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="log"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/divisionButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toEndOf="@+id/lnButton"
-        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+        app:layout_constraintBottom_toTopOf="@+id/clearButton"
+        app:layout_constraintEnd_toStartOf="@+id/sqrtButton"
+        app:layout_constraintStart_toEndOf="@id/lnButton"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
 
     <Button
         android:id="@+id/lnButton"
@@ -539,14 +563,15 @@
         android:layout_height="0dp"
         android:layout_margin="3dp"
         android:autoSizeMaxTextSize="50dp"
-        android:autoSizeMinTextSize="8dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
+        android:backgroundTint="#6C117C"
         android:padding="3dp"
         android:text="ln"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toTopOf="@id/plusMinusButton"
-        app:layout_constraintEnd_toStartOf="@id/logButton"
+        app:layout_constraintBottom_toTopOf="@+id/allClearButton"
+        app:layout_constraintEnd_toStartOf="@+id/logButton"
         app:layout_constraintStart_toEndOf="@id/percentButton"
-        app:layout_constraintTop_toBottomOf="@id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
