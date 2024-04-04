@@ -16,11 +16,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdvancedCalcScreenBinding
 
-    private var expression = "0"
-
     private var operation = false
-
-    private var advancedOperation = false
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,66 +31,77 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
 
         binding.zeroButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("0")
             binding.expressionTextView.append("0")
         }
         binding.oneButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("1")
             binding.expressionTextView.append("1")
         }
         binding.twoButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("2")
             binding.expressionTextView.append("2")
         }
         binding.threeButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("3")
             binding.expressionTextView.append("3")
         }
         binding.fourButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("4")
             binding.expressionTextView.append("4")
         }
         binding.fiveButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("5")
             binding.expressionTextView.append("5")
         }
         binding.sixButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("6")
             binding.expressionTextView.append("6")
         }
         binding.sevenButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("7")
             binding.expressionTextView.append("7")
         }
         binding.eightButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("8")
             binding.expressionTextView.append("8")
         }
         binding.nineButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfThereIsOnlyZero()
             checkIfThereIsOperation()
             binding.resultView.append("9")
             binding.expressionTextView.append("9")
         }
         binding.addButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
@@ -104,6 +111,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.append("+")
         }
         binding.subtractButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
@@ -113,6 +121,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.append("-")
         }
         binding.divisionButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
@@ -122,6 +131,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.append("/")
         }
         binding.multiplyButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
@@ -131,6 +141,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.append("*")
         }
         binding.dotButton.setOnClickListener {
+            checkIfThereIsInfinity()
             if (!binding.resultView.text.contains(".")) {
                 binding.resultView.append(".")
                 binding.expressionTextView.append(".")
@@ -138,106 +149,114 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
 
         binding.logButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val exp = "log10(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
 
         binding.lnButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val exp = "log(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
         binding.sinButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
 
             val exp = "sin(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
         binding.cosButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val exp = "cos(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
         binding.tanButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val exp = "tan(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
         binding.sqrtButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val exp = "sqrt(" + binding.expressionTextView.text + ")"
             binding.expressionTextView.text = exp
+            evaluateExpression()
         }
         binding.squareButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val tmp = binding.expressionTextView.text.toString().toFloat()
 
             binding.expressionTextView.text = (tmp * tmp).toString()
+            evaluateExpression()
         }
         binding.powerButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
-            val exp = "tan(" + binding.expressionTextView.text + ")"
-            binding.expressionTextView.text = exp
+
+            binding.expressionTextView.append("^")
         }
         binding.percentButton.setOnClickListener {
+            checkIfThereIsInfinity()
             checkIfLastCharIsDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
             }
             operation = true
-            advancedOperation = true
             val tmp = binding.expressionTextView.text.toString().toFloat()
             binding.expressionTextView.text = (tmp/100).toString()
+            evaluateExpression()
         }
 
 
@@ -248,7 +267,6 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.clearButton.setOnClickListener {
             operation = false
-            advancedOperation = false
             if (binding.resultView.text.isNotEmpty()) {
                 binding.resultView.text = binding.resultView.text.dropLast(1)
                 binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
@@ -260,6 +278,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
         }
         binding.plusMinusButton.setOnClickListener {
+            checkIfThereIsInfinity()
             if (binding.resultView.text.toString().toFloat() > 0) {
                 var t = binding.resultView.text
                 t = "-$t"
@@ -288,15 +307,22 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
         binding.resultButton.setOnClickListener {
             operation = false
-            advancedOperation = true
             checkIfLastCharIsDigit()
             evaluateExpression()
         }
     }
 
     private fun checkIfLastCharIsDigit() {
-        if (binding.expressionTextView.text.isNotEmpty() && !binding.expressionTextView.text.last().isDigit() && !advancedOperation) {
+        if (binding.expressionTextView.text.isNotEmpty() && !binding.expressionTextView.text.last().isDigit()) {
             binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
+        }
+    }
+    private fun checkIfNaN(){
+        if(binding.expressionTextView.text.toString().compareTo("NaN") == 0) {
+            val t = Toast.makeText(applicationContext, "Not a Number!", Toast.LENGTH_SHORT)
+            t.show()
+            binding.expressionTextView.text = "0"
+            binding.resultView.text = "0"
         }
     }
 
@@ -309,12 +335,12 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.text = result.toString()
 
         } catch (ex: ArithmeticException) {
-            val t = Toast.makeText(applicationContext, "Error!", Toast.LENGTH_SHORT)
+            val t = Toast.makeText(applicationContext, "Division by zero!", Toast.LENGTH_SHORT)
             t.show()
-            Log.e("error", ex.toString())
             binding.expressionTextView.text = "0"
             binding.resultView.text = "0"
         }
+        checkIfNaN()
     }
 
     private fun checkIfThereIsOnlyZero() {
@@ -329,6 +355,12 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.resultView.text = ""
             operation = false
         }
-
+    }
+    private fun checkIfThereIsInfinity() {
+        if (binding.resultView.text.toString().compareTo("Infinity") == 0 || binding.resultView.text.toString().compareTo("-Infinity") == 0) {
+            binding.resultView.text = "0"
+            binding.expressionTextView.text = "0"
+            operation = false
+        }
     }
 }

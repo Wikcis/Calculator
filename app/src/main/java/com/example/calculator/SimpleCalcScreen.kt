@@ -170,7 +170,8 @@ class SimpleCalcScreen : AppCompatActivity() {
                     binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
                     binding.resultView.text = binding.resultView.text.drop(1)
                 }else{
-                    binding.expressionTextView.text = "-$binding.expressionTextView.text"
+                    val tmp = binding.expressionTextView.text.toString().toFloat()
+                    binding.expressionTextView.text = (-tmp).toString()
                     binding.resultView.text = binding.expressionTextView.text
                 }
             }
@@ -195,7 +196,7 @@ class SimpleCalcScreen : AppCompatActivity() {
             binding.expressionTextView.text = result.toString()
 
         }catch (ex : ArithmeticException) {
-            val t = Toast.makeText(applicationContext, "Error!", Toast.LENGTH_SHORT)
+            val t = Toast.makeText(applicationContext, "Division by zero!", Toast.LENGTH_SHORT)
             t.show()
             Log.e("error", ex.toString())
             binding.expressionTextView.text = "0"
