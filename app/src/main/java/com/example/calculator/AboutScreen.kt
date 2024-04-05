@@ -27,10 +27,10 @@ class AboutScreen : AppCompatActivity() {
 
         binding.mainTitleTextView.text = "Calculator App"
         binding.textView.text = "\tWelcome to Calculator app for Android by Wiktor Ciszewski.\n" +
-                "\tMy application provides a user-friendly interface for all your basic and advanced mathematical calculations." +
-                "\n\n\tThe Simple part of the calculator is designed for quick and straightforward calculations like adding (+), subtracting (-), multiplying (*) and division (/)." +
-                "\n\n\tFor more complex mathematical needs, my Advanced Screen offers a range of additional functions and operations." +
-                "Key Features of the Advanced Screen are: sqrt, ln, log, x^y, x^2, sin, cos, tan and percent"
+                "\tMy application provides a user-friendly interface for all your basic and advanced mathematical calculations. " +
+                "\n\n\tThe Simple part of the calculator is designed for quick and straightforward calculations like adding (+), subtracting (-), multiplying (*) and division (/). " +
+                "\n\n\tFor more complex mathematical needs, my Advanced Screen offers a range of additional functions and operations. " +
+                "Key Features of the Advanced Calculator are: sqrt, ln, log, x^y, x^2, sin, cos, tan and percent"
 
 
     }

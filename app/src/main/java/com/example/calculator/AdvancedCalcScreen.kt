@@ -1,6 +1,7 @@
 package com.example.calculator
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -27,80 +28,99 @@ class AdvancedCalcScreen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         binding.zeroButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("0")
-            binding.expressionTextView.append("0")
+            if(binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("0")
+                binding.expressionTextView.append("0")
+            }
         }
         binding.oneButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("1")
-            binding.expressionTextView.append("1")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("1")
+                binding.expressionTextView.append("1")
+            }
         }
         binding.twoButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("2")
-            binding.expressionTextView.append("2")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("2")
+                binding.expressionTextView.append("2")
+            }
         }
         binding.threeButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("3")
-            binding.expressionTextView.append("3")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("3")
+                binding.expressionTextView.append("3")
+            }
         }
         binding.fourButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("4")
-            binding.expressionTextView.append("4")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("4")
+                binding.expressionTextView.append("4")
+            }
         }
         binding.fiveButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("5")
-            binding.expressionTextView.append("5")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("5")
+                binding.expressionTextView.append("5")
+            }
         }
         binding.sixButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("6")
-            binding.expressionTextView.append("6")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("6")
+                binding.expressionTextView.append("6")
+            }
         }
         binding.sevenButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("7")
-            binding.expressionTextView.append("7")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("7")
+                binding.expressionTextView.append("7")
+            }
         }
         binding.eightButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("8")
-            binding.expressionTextView.append("8")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("8")
+                binding.expressionTextView.append("8")
+            }
         }
         binding.nineButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            checkIfThereIsOnlyZero()
-            checkIfThereIsOperation()
-            binding.resultView.append("9")
-            binding.expressionTextView.append("9")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                checkIfThereIsOnlyZero()
+                checkIfThereIsOperation()
+                binding.resultView.append("9")
+                binding.expressionTextView.append("9")
+            }
         }
         binding.addButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -110,7 +130,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.subtractButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -120,7 +140,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.divisionButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -130,7 +150,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.multiplyButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -139,16 +159,18 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.append("*")
         }
         binding.dotButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            if (!binding.resultView.text.contains(".")) {
-                binding.resultView.append(".")
-                binding.expressionTextView.append(".")
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                if (!binding.resultView.text.contains(".")) {
+                    binding.resultView.append(".")
+                    binding.expressionTextView.append(".")
+                }
             }
         }
 
         binding.logButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -161,7 +183,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
         binding.lnButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -173,7 +195,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.sinButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -186,7 +208,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.cosButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -198,7 +220,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.tanButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -210,7 +232,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.sqrtButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -222,7 +244,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.squareButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -235,7 +257,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.powerButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -246,7 +268,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
         binding.percentButton.setOnClickListener {
             checkIfThereIsInfinity()
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             if (!operation) {
                 evaluateExpression()
                 binding.resultView.text = binding.expressionTextView.text
@@ -264,6 +286,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.expressionTextView.text = "0"
         }
         binding.clearButton.setOnClickListener {
+            checkIfThereIsInfinity()
             operation = false
             if (binding.resultView.text.isNotEmpty()) {
                 binding.resultView.text = binding.resultView.text.dropLast(1)
@@ -276,41 +299,49 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
         }
         binding.plusMinusButton.setOnClickListener {
-            checkIfThereIsInfinity()
-            if (binding.resultView.text.toString().toFloat() > 0) {
-                var t = binding.resultView.text
-                t = "-$t"
-                binding.resultView.text = t
-                binding.expressionTextView.text =
-                    binding.expressionTextView.text.dropLast(t.length - 1)
-                binding.expressionTextView.append(t)
+            if (binding.resultView.text.length <= blockSize() || operation) {
+                checkIfThereIsInfinity()
+                if (binding.resultView.text.toString().toFloat() > 0) {
+                    var t = binding.resultView.text
+                    t = "-$t"
+                    binding.resultView.text = t
+                    binding.expressionTextView.text =
+                        binding.expressionTextView.text.dropLast(t.length - 1)
+                    binding.expressionTextView.append(t)
 
-            } else if (binding.resultView.text.toString().toFloat() < 0) {
-                binding.resultView.text =
-                    (binding.resultView.text.toString().toFloat() * -1).toString()
-                binding.expressionTextView.text =
-                    binding.expressionTextView.text.dropLast(binding.resultView.text.length + 1)
-                binding.expressionTextView.append(binding.resultView.text)
-            } else {
-                if (binding.expressionTextView.text == "-0") {
-                    binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
-                    binding.resultView.text = binding.resultView.text.drop(1)
+                } else if (binding.resultView.text.toString().toFloat() < 0) {
+                    binding.resultView.text =
+                        (binding.resultView.text.toString().toFloat() * -1).toString()
+                    binding.expressionTextView.text =
+                        binding.expressionTextView.text.dropLast(binding.resultView.text.length + 1)
+                    binding.expressionTextView.append(binding.resultView.text)
                 } else {
-                    val tmp = binding.expressionTextView.text.toString().toFloat()
-                    binding.expressionTextView.text = (-tmp).toString()
-                    binding.resultView.text = binding.expressionTextView.text
+                    if (binding.expressionTextView.text == "-0") {
+                        binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
+                        binding.resultView.text = binding.resultView.text.drop(1)
+                    } else {
+                        val tmp = binding.expressionTextView.text.toString().toFloat()
+                        binding.expressionTextView.text = (-tmp).toString()
+                        binding.resultView.text = binding.expressionTextView.text
+                    }
                 }
             }
         }
 
         binding.resultButton.setOnClickListener {
             operation = false
-            checkIfLastCharIsDigit()
+            checkIfLastCharIsNotDigit()
             evaluateExpression()
         }
     }
 
-    private fun checkIfLastCharIsDigit() {
+    private fun blockSize(): Int {
+        return if (getResources().configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            12
+        } else 45
+    }
+
+    private fun checkIfLastCharIsNotDigit() {
         if (binding.expressionTextView.text.isNotEmpty() && !binding.expressionTextView.text.last().isDigit()) {
             binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
         }
@@ -332,7 +363,7 @@ class AdvancedCalcScreen : AppCompatActivity() {
             binding.resultView.text = result.toString()
             binding.expressionTextView.text = result.toString()
 
-        } catch (ex: ArithmeticException) {
+        } catch (ex: ArithmeticException ) {
             val t = Toast.makeText(applicationContext, "Division by zero!", Toast.LENGTH_SHORT)
             t.show()
             binding.expressionTextView.text = "0"
@@ -355,7 +386,13 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
     }
     private fun checkIfThereIsInfinity() {
-        if (binding.resultView.text.toString().compareTo("Infinity") == 0 || binding.resultView.text.toString().compareTo("-Infinity") == 0) {
+        var counter = 0
+        for (chr in binding.resultView.text) {
+            if (chr.isLetter() && chr!='E'){
+                counter++
+            }
+        }
+        if (counter > 0){
             binding.resultView.text = "0"
             binding.expressionTextView.text = "0"
             operation = false
