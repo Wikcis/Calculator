@@ -18,6 +18,12 @@ class SimpleCalcScreen : AppCompatActivity() {
 
     private var operation = false
 
+    private val PORTRAIT_LENGTH = 12
+
+    private val LANDSCAPE_LENGTH = 37
+
+    private var blockSize = PORTRAIT_LENGTH
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,70 +37,70 @@ class SimpleCalcScreen : AppCompatActivity() {
         }
 
         binding.zeroButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("0")
             }
         }
 
         binding.oneButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("1")
             }
         }
 
         binding.twoButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("2")
             }
         }
 
         binding.threeButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("3")
             }
         }
 
         binding.fourButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("4")
             }
         }
 
         binding.fiveButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("5")
             }
         }
 
         binding.sixButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("6")
             }
         }
 
         binding.sevenButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("7")
             }
         }
 
         binding.eightButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("8")
             }
         }
 
         binding.nineButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfAddingDigitsIsPossible()
                 appendCharToView("9")
             }
@@ -145,7 +151,7 @@ class SimpleCalcScreen : AppCompatActivity() {
         }
 
         binding.dotButton.setOnClickListener{
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfThereIsInfinity()
                 if (!binding.resultView.text.contains(".")) {
                     appendCharToView(".")
@@ -170,7 +176,7 @@ class SimpleCalcScreen : AppCompatActivity() {
         }
 
         binding.plusMinusButton.setOnClickListener {
-            if (binding.resultView.text.length <= blockSize() || operation) {
+            if (binding.resultView.text.length <= blockSize || operation) {
                 checkIfThereIsInfinity()
                 if (binding.resultView.text.toString().toDouble() > 0) {
                     var t = binding.resultView.text
@@ -213,12 +219,6 @@ class SimpleCalcScreen : AppCompatActivity() {
         checkIfThereIsOnlyZero()
         checkIfThereIsOperation()
     }
-    private fun blockSize(): Int {
-        return if (getResources().configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            12
-        } else 45
-    }
-
     private fun checkIfLastCharIsNotDigit(){
         if(!binding.expressionTextView.text.last().isDigit()){
             binding.expressionTextView.text = binding.expressionTextView.text.dropLast(1)
@@ -269,5 +269,16 @@ class SimpleCalcScreen : AppCompatActivity() {
             clearViewToZero()
             operation = false
         }
+    }
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        val newOrientation = newConfig.orientation
+        return if (newOrientation == Configuration.ORIENTATION_PORTRAIT) {
+            val len = binding.resultView.text.length
+            if (len > PORTRAIT_LENGTH + 1) {
+                binding.resultView.text = binding.resultView.text.drop(len - PORTRAIT_LENGTH - 1)
+            }
+            blockSize = PORTRAIT_LENGTH
+        } else blockSize = LANDSCAPE_LENGTH
     }
 }
