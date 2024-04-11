@@ -1,6 +1,5 @@
 package com.example.calculator
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
@@ -24,7 +23,6 @@ class AdvancedCalcScreen : AppCompatActivity() {
 
     private var blockSize = PORTRAIT_LENGTH
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdvancedCalcScreenBinding.inflate(layoutInflater)
@@ -300,31 +298,28 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
 
         binding.plusMinusButton.setOnClickListener {
-            if (binding.resultView.text.length <= blockSize || operation) {
-                checkIfThereIsInfinity()
-                if (binding.resultView.text.toString().toDouble() > 0) {
-                    var t = binding.resultView.text
-                    t = "-$t"
-                    binding.resultView.text = t
-                    binding.expressionTextView.text =
-                        binding.expressionTextView.text.dropLast(t.length - 1)
-                    binding.expressionTextView.append(t)
+            if (binding.resultView.text.toString().toDouble() > 0) {
+                var t = binding.resultView.text
+                t = "-$t"
+                binding.resultView.text = t
+                binding.expressionTextView.text =
+                    binding.expressionTextView.text.dropLast(t.length - 1)
+                binding.expressionTextView.append(t)
 
-                } else if (binding.resultView.text.toString().toDouble() < 0) {
-                    binding.resultView.text =
-                        (binding.resultView.text.toString().toDouble() * -1).toString()
-                    binding.expressionTextView.text =
-                        binding.expressionTextView.text.dropLast(binding.resultView.text.length + 1)
-                    binding.expressionTextView.append(binding.resultView.text)
+            } else if (binding.resultView.text.toString().toDouble() < 0) {
+                binding.resultView.text =
+                    (binding.resultView.text.toString().toDouble() * -1).toString()
+                binding.expressionTextView.text =
+                    binding.expressionTextView.text.dropLast(binding.resultView.text.length + 1)
+                binding.expressionTextView.append(binding.resultView.text)
+            } else {
+                if (binding.expressionTextView.text == "-0") {
+                    binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
+                    binding.resultView.text = binding.resultView.text.drop(1)
                 } else {
-                    if (binding.expressionTextView.text == "-0") {
-                        binding.expressionTextView.text = binding.expressionTextView.text.drop(1)
-                        binding.resultView.text = binding.resultView.text.drop(1)
-                    } else {
-                        val tmp = binding.expressionTextView.text.toString().toDouble()
-                        binding.expressionTextView.text = (-tmp).toString()
-                        binding.resultView.text = binding.expressionTextView.text
-                    }
+                    val tmp = binding.expressionTextView.text.toString().toDouble()
+                    binding.expressionTextView.text = (-tmp).toString()
+                    binding.resultView.text = binding.expressionTextView.text
                 }
             }
         }
@@ -351,7 +346,6 @@ class AdvancedCalcScreen : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("RtlHardcoded")
     private fun evaluateExpression() {
         try {
             val result =
